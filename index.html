@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoops — local basketball</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-text">
+          <strong>Hoops</strong>
+          <small>drag to shoot &middot; grab it mid-air</small>
+        </span>
+      </div>
+
+      <div class="stats" role="group" aria-label="Game stats">
+        <div class="stat stat-main">
+          <span class="stat-label">Score</span>
+          <span class="stat-value" id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Made / Shots</span>
+          <span class="stat-value" id="makes">0 / 0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Streak</span>
+          <span class="stat-value" id="streak">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Best</span>
+          <span class="stat-value" id="best">0</span>
+        </div>
+      </div>
+
+      <div class="tools">
+        <button type="button" id="btnAim" class="btn" aria-pressed="true">Aim guide: on</button>
+        <button type="button" id="btnSound" class="btn" aria-pressed="true">Sound: on</button>
+        <button type="button" id="btnReset" class="btn btn-primary">Reset</button>
+      </div>
+    </header>
+
+    <div class="stage" id="stage">
+      <canvas id="game" width="960" height="600" aria-label="Basketball court. Click and drag the ball toward the hoop to shoot."></canvas>
+      <p class="hint" id="hint">Click the ball, drag toward the hoop. Longer drag = more power.</p>
+    </div>
+
+    <footer class="keys">
+      <span><kbd>R</kbd> reset</span>
+      <span><kbd>T</kbd> aim guide</span>
+      <span><kbd>M</kbd> sound</span>
+      <span class="keys-note">Grab the ball while it's still in the air to fix your shot.</span>
+    </footer>
+  </main>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
